@@ -25,11 +25,11 @@ function Post({ postData }) { //postData = {id='', title = '',content='',userId=
 
   return (
     <div className='postCard'>
-      <button onClick={deletePost}>x</button>
+      <button onClick={deletePost} className='btn'>X</button>
       <h4>{postData.title}</h4>
       <hr></hr>
       <p>{postData.content}</p>
-      <CommentsHolder comments={postData.comments} />
+      {postData.comments.length?<CommentsHolder comments={postData.comments} />:<p className='commentsHolder'>Add the first comment...</p>}
       <CommentForm postID={postData.id} />
     </div>
   )

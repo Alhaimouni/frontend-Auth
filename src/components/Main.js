@@ -14,7 +14,7 @@ function Main() {
 
   const { isLogged, setIsLogged } = useContext(AuthContext);
   const { refreshMain, setRefreshMain } = useContext(RefreshContext);
-  const { mode } = useContext(themeContext);
+  const { mode, setMode } = useContext(themeContext);
 
   const [posts, setPosts] = useState([]);
 
@@ -22,6 +22,7 @@ function Main() {
 
   useEffect(() => {
     const token = cookies.load("token");
+    setMode(cookies.load("mode"))
     if (token) {
       setIsLogged(true);
       const bearer = {

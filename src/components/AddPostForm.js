@@ -20,8 +20,9 @@ function AddPostForm() {
       }
     }
     const axiosResponse = await axios.post(url, post, bearer);
-    const createdPost = axiosResponse.data;
     setRefreshMain(pre => pre + 1);
+    e.target.title.value = '';
+    e.target.content.value = '';
   }
 
 
@@ -31,9 +32,9 @@ function AddPostForm() {
 
   return (
     <form className='addPostForm' onSubmit={AddPost}>
-      <input type='text' placeholder='Title' name='title' id='ttt'></input>
+      <input type='text' placeholder='Title' name='title' id='ttt' required></input>
       <br></br>
-      <input type='text' placeholder='Content' name='content' id='tttC'></input>
+      <input type='text' placeholder='Content' name='content' id='tttC' required></input>
       <br></br>
       <input type='submit' value='Post' id='tttS'></input>
     </form>

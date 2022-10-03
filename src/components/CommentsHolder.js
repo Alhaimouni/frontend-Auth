@@ -6,7 +6,7 @@ function CommentsHolder({ comments }) { //[array of comment object]
       {comments.map((comment, index) => (          //comment = {content='',userId='',postId=''}
         <div key={index}>
           <p> By User: {comment.userId}</p>
-          <h3>{comment.content}</h3>
+          <h4>{comment.content}</h4>
           <hr></hr>
         </div>
       ))}

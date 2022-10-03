@@ -13,6 +13,7 @@ function Header() {
   function logOut() {
     cookies.remove('token');
     cookies.remove('username');
+    cookies.remove('_id');
     setIsLogged(false);
   }
 
@@ -23,13 +24,10 @@ function Header() {
       </div>
       <div className="bp4-navbar-group bp4-align-right">
         {isLogged && <Link to="/" className="bp4-button bp4-minimal bp4-icon">Main</Link>}
-        {isLogged && <Link to="/about" className="bp4-button bp4-minimal bp4-icon">Profile</Link>}
+        {isLogged && <button  className="bp4-button bp4-minimal bp4-icon-user">{cookies.load('username')}</button>}
         {isLogged && <Link to="/login" className="bp4-button bp4-minimal bp4-icon" onClick={logOut}>Logout</Link>}
         <span className="bp4-navbar-divider"></span>
         <button className="bp4-button bp4-minimal bp4-icon" onClick={theme_Context.switchMode}>{theme_Context.mode} mode</button>
-        <button className="bp4-button bp4-minimal bp4-icon-notifications"></button>
-        <button className="bp4-button bp4-minimal bp4-icon-user"></button>
-        <button className="bp4-button bp4-minimal bp4-icon-cog"></button>
       </div>
     </nav>
   )

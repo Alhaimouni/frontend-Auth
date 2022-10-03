@@ -17,12 +17,13 @@ function CommentForm({ postID }) {
     const axiosResponse = await axios.post(url, comment);
     const allComments = axiosResponse.data;
     setRefreshMain(pre => pre + 1);
+    e.target.newComment.value = '';
   }
 
   return (
-    <form onSubmit={addComment}>
-      <input type='text' id='newComment' required></input>
-      <input type='submit' value='comment'></input>
+    <form onSubmit={addComment} className='form'>
+      <input type='text' id='newComment' className='cmntInput' placeholder='Add your comment' required></input>
+      <input type='submit' value='comment' className='cmntSubmit'></input>
     </form>
   )
 }

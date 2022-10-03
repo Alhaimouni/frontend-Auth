@@ -8,10 +8,7 @@ import Footer from './components/Footer';
 import Main from './components/Main';
 import ThemeProvider from './contexs/ThemeProvider';
 import Login from './components/Login';
-import About from './components/About';
 import AuthProvider from './contexs/AuthProvider';
-import { useContext, useEffect } from 'react';
-import cookies from "react-cookies";
 import RefreshProvider from './contexs/RefreshProvider';
 
 
@@ -28,7 +25,7 @@ function App() {
             <Routes >
               <Route exact path="/" element={<Main />}></Route>
               <Route exact path="/login" element={<Login />}></Route>
-              <Route exact path="/about" element={<About />}></Route>
+              {/* <Route exact path="/about" element={<About />}></Route> */}
             </Routes>
             <Footer />
           </BrowserRouter>
