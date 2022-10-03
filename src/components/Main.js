@@ -35,13 +35,11 @@ function Main() {
         .then(resolve => {
           const posts = resolve.data;
           setPosts(posts);
-          console.log(posts);
         })
         .catch(reject => {
           console.log(reject);
         })
     }
-
   }, [refreshMain])
 
 
